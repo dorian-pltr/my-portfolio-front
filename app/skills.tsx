@@ -1,30 +1,11 @@
 'use client'
 
-import {
-  Badge,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { FaCog } from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
+import TechnoBadge from '@/components/skillBadge'
 
-const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
-const backTechnologies = [
-  'Node.JS',
-  'Express',
-  'GraphQL',
-  'PostgreSQL',
-  'MySQL',
-  'MongoDB',
-  'InfluxDB',
-]
-const projectManagement = ['GIT', 'Agile et Scrum', 'Jira', 'Confluence', 'Trello']
-const lowCode = ['Airtable', 'Zapier', 'Power Automate', 'WordPress']
+import { groupSkillsByType } from '@/utils/skillUtils'
 
 const differenceDates = (stringStartDate: string, stringEndDate?: string | undefined) => {
   const startDate = new Date(stringStartDate)
@@ -38,32 +19,9 @@ const differenceDates = (stringStartDate: string, stringEndDate?: string | undef
   return { yearDiff, monthDiff }
 }
 
-const skillsList = (title: string, skills: Array<string>, colorScheme: string) => {
-  return (
-    <Box>
-      <Heading fontSize="xl" mt={5} mb={3}>
-        {title}
-      </Heading>
-      <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start" gap={2}>
-        {skills.map(feature => (
-          <Badge
-            colorScheme={colorScheme}
-            key={feature}
-            rounded="3xl"
-            size="sm"
-            p={2}
-            variant="outline"
-          >
-            {feature}
-          </Badge>
-        ))}
-      </Flex>
-    </Box>
-  )
-}
-
 const totalExperience = differenceDates('2020-01-01')
 export default function Skills() {
+  const groupedSkills = groupSkillsByType()
   return (
     <Box
       shadow="base"
@@ -94,24 +52,31 @@ export default function Skills() {
           justifyContent="space-evenly"
         >
           <Text fontSize="xl">
-            Je suis un développeur <b>Fullstack</b> spécialisé dans la création d&apos;applications
-            <b> modernes et performantes</b>. Basé à Montpellier, je travaille avec des startups et
-            des entreprises en croissance pour les aider à atteindre leurs objectifs business.
+            Je suis un <b>développeur Fullstack</b> basé à Montpellier, spécialisé dans la création
+            d&aposapplications modernes et performantes.
             <br />
-            <br /> Mes atouts résident dans ma connaissance approfondie de l&apos;écosystème
-            <b> JavaScript avec React, Node.js et Next.js</b>.
+            <br />
+            Mon expertise en <b>JavaScript</b>, notamment avec <b>React, Node.js et Next.js</b>, me
+            permet de concevoir des solutions web de qualité.
+            <br />
+            <br />
+            Je suis ouvert aux opportunités en <b>CDI et en freelance</b>, prêt à collaborer avec
+            des startups et des entreprises en croissance pour les aider à atteindre leurs objectifs
+            technologiques.
+            <br />
+            <br />
+            <b>Contactez-moi</b> pour discuter de la manière dont je peux contribuer à la réussite
+            de votre projet ou de votre entreprise.
           </Text>
-
           <Button
             as={NextLink}
-            width="min-content"
             rounded="xl"
             colorScheme="pink"
-            href="/skills"
-            leftIcon={<FaCog />}
-            display={{ base: 'none', lg: 'inherit' }}
+            href="/contact"
+            width="100%"
+            leftIcon={<FaEnvelope />}
           >
-            Mes compétences en détail
+            Me contacter
           </Button>
         </Flex>
         <Flex
@@ -123,21 +88,18 @@ export default function Skills() {
           flexDirection="column"
           width="100%"
         >
-          {skillsList('Front-End', frontTechnologies, 'pink')}
-          {skillsList('Back-End', backTechnologies, 'purple')}
-          {skillsList('Gestion de projet', projectManagement, 'yellow')}
-          {skillsList('Low Code', lowCode, useColorModeValue('blackAlpha', 'gray'))}
-          <Button
-            mt={7}
-            as={NextLink}
-            rounded="xl"
-            colorScheme="pink"
-            href="/skills"
-            leftIcon={<FaCog />}
-            display={{ base: 'flex', lg: 'none' }}
-          >
-            Mes compétences en détail
-          </Button>
+          {Object.entries(groupedSkills).map(([type, skills]) => (
+            <Box key={type}>
+              <Heading fontSize="xl" mt={5} mb={3}>
+                {type}
+              </Heading>
+              <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start">
+                {skills.map(skill => (
+                  <TechnoBadge colorScheme={skill.color} name={skill.name} key={skill.id} />
+                ))}
+              </Flex>
+            </Box>
+          ))}
         </Flex>
       </Flex>
     </Box>

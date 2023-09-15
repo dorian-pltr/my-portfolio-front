@@ -1,5 +1,4 @@
 import {
-  Badge,
   Button,
   Center,
   Flex,
@@ -13,6 +12,8 @@ import NextLink from 'next/link'
 import './globals.css'
 import { FaBoltLightning } from 'react-icons/fa6'
 import { FaEnvelope } from 'react-icons/fa'
+import TechnoBadge from '@/components/skillBadge'
+import { getSkillsByNames } from '@/utils/skillUtils'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
@@ -30,6 +31,7 @@ const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: num
   )
 }
 export default function Hero() {
+  const skills = getSkillsByNames(['React', 'Next.js', 'Node.js'])
   return (
     <>
       <Stack direction={{ base: 'column', md: 'row' }} pb={{ base: 5, md: 20 }} gap={10}>
@@ -69,15 +71,9 @@ export default function Hero() {
                 direction="row"
                 flexWrap="wrap"
               >
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  React
-                </Badge>
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  Next.js
-                </Badge>
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  Node.js
-                </Badge>
+                {skills?.map(skill => (
+                  <TechnoBadge colorScheme={skill.color} name={skill.name} key={skill.id} />
+                ))}
               </Stack>
             </Heading>
             <Flex

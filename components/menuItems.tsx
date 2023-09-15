@@ -44,12 +44,6 @@ export default function MenuItems({
       <MenuButton href="/" onItemClick={onItemClick}>
         Accueil
       </MenuButton>
-      <MenuButton href="/about" onItemClick={onItemClick}>
-        À propos
-      </MenuButton>
-      <MenuButton href="/skills" onItemClick={onItemClick}>
-        Compétences
-      </MenuButton>
       <MenuButton href="/projects" onItemClick={onItemClick}>
         Projets
       </MenuButton>

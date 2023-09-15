@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  images: {
+    domains: ['images.unsplash.com'], // Ajoutez l'hôte ici
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '*',
+      },
+    ],
+  },
 }
-// eslint-disable-next-line no-undef
+
 module.exports = nextConfig

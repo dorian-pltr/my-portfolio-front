@@ -1,6 +1,7 @@
 'use client'
 import Hero from './hero'
 import Skills from './skills'
+import LastProjects from '@/app/lastProjects'
 import { Box, Stack } from '@chakra-ui/react'
 import './globals.css'
 
@@ -12,6 +13,7 @@ export default function Page() {
         <Box pt="50">
           <Skills />
         </Box>
+        <LastProjects />
       </Stack>
     </div>
   )

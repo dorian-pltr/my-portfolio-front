@@ -1,0 +1,172 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "type": "Frontend",
+      "name": "React",
+      "color": "pink"
+    },
+    {
+      "id": 2,
+      "type": "Frontend",
+      "name": "Next.js",
+      "color": "pink"
+    },
+    {
+      "id": 3,
+      "type": "Frontend",
+      "name": "Redux",
+      "color": "pink"
+    },
+    {
+      "id": 4,
+      "type": "Frontend",
+      "name": "Routing",
+      "color": "pink"
+    },
+    {
+      "id": 5,
+      "type": "Frontend",
+      "name": "TypeScript",
+      "color": "pink"
+    },
+    {
+      "id": 6,
+      "type": "Frontend",
+      "name": "HTML",
+      "color": "pink"
+    },
+    {
+      "id": 7,
+      "type": "Frontend",
+      "name": "CSS",
+      "color": "pink"
+    },
+    {
+      "id": 8,
+      "type": "Backend",
+      "name": "Node.js",
+      "color": "purple"
+    },
+    {
+      "id": 9,
+      "type": "Backend",
+      "name": "Express",
+      "color": "purple"
+    },
+    {
+      "id": 10,
+      "type": "Backend",
+      "name": "GraphQL",
+      "color": "purple"
+    },
+    {
+      "id": 11,
+      "type": "Backend",
+      "name": "PostgreSQL",
+      "color": "purple"
+    },
+    {
+      "id": 12,
+      "type": "Backend",
+      "name": "MySQL",
+      "color": "purple"
+    },
+    {
+      "id": 13,
+      "type": "Backend",
+      "name": "MongoDB",
+      "color": "purple"
+    },
+    {
+      "id": 14,
+      "type": "Backend",
+      "name": "InfluxDB",
+      "color": "purple"
+    },
+    {
+      "id": 15,
+      "type": "Testing",
+      "name": "Jest",
+      "color": "green"
+    },
+    {
+      "id": 16,
+      "type": "Testing",
+      "name": "Cypress",
+      "color": "green"
+    },
+    {
+      "id": 17,
+      "type": "DevOps",
+      "name": "Docker",
+      "color": "yellow"
+    },
+    {
+      "id": 18,
+      "type": "DevOps",
+      "name": "Railway",
+      "color": "yellow"
+    },
+    {
+      "id": 19,
+      "type": "DevOps",
+      "name": "Vercel",
+      "color": "yellow"
+    },
+    {
+      "id": 20,
+      "type": "Gestion de projet",
+      "name": "GIT",
+      "color": "blue"
+    },
+    {
+      "id": 21,
+      "type": "Gestion de projet",
+      "name": "Agile et Scrum",
+      "color": "blue"
+    },
+    {
+      "id": 22,
+      "type": "Gestion de projet",
+      "name": "Jira",
+      "color": "blue"
+    },
+    {
+      "id": 23,
+      "type": "Gestion de projet",
+      "name": "Confluence",
+      "color": "blue"
+    },
+    {
+      "id": 24,
+      "type": "Gestion de projet",
+      "name": "Trello",
+      "color": "blue"
+    },
+    {
+      "id": 25,
+      "type": "Low Code",
+      "name": "Airtable",
+      "color": "gray"
+    },
+    {
+      "id": 26,
+      "type": "Low Code",
+      "name": "Zapier",
+      "color": "gray"
+    },
+    {
+      "id": 27,
+      "type": "Low Code",
+      "name": "Power Automate",
+      "color": "gray"
+    },
+    {
+      "id": 28,
+      "type": "Low Code",
+      "name": "WordPress",
+      "color": "gray"
+    }
+  ]
+}
