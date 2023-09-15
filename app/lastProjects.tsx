@@ -6,7 +6,6 @@ export default function LastProjects() {
   return (
     <Flex direction="row" flexWrap="wrap" justify="space-between">
       <ProjectCard
-        width="400px"
         description="Lorem Ipsum"
         title="Lorem Ipsum"
         url="https://www.google.fr"
@@ -24,7 +23,6 @@ export default function LastProjects() {
         ])}
       />
       <ProjectCard
-        width="400px"
         description="Lorem Ipsum"
         title="Lorem Ipsum"
         url="www.google.fr"
@@ -40,7 +38,6 @@ export default function LastProjects() {
         ])}
       />
       <ProjectCard
-        width="400px"
         description="Lorem Ipsum"
         title="Lorem Ipsum"
         url="www.google.fr"
